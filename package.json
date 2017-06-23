@@ -1,0 +1,54 @@
+{
+  "name": "gitbook-plugin-versions-select",
+  "description": "Fork of versions plugin with selected status based on url.",
+  "main": "index.js",
+  "version": "0.1.0",
+  "scripts": {
+    "lint": "eslint index.js test.js, assets/**",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "npm run lint && tape test.js"
+  },
+  "engines": {
+    "gitbook": ">=2.4.1"
+  },
+  "gitbook": {
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": [
+          "branches",
+          "tags",
+          "languages"
+        ],
+        "default": "branches"
+      },
+      "includeFilepath": {
+        "type": "boolean",
+        "description": "True to insert current filepath at the end of the version url"
+      }
+    }
+  },
+  "homepage": "https://github.com/prescottprue/gitbook-plugin-versions-select",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prescottprue/gitbook-plugin-versions-select.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/prescottprue/gitbook-plugin-versions-select/issues"
+  },
+  "dependencies": {
+    "cheerio": "0.22.0",
+    "mkdirp": "0.5.1"
+  },
+  "devDependencies": {
+    "eslint": "3.11.1",
+    "eslint-config-semistandard": "7.0.0",
+    "eslint-config-standard": "6.2.1",
+    "eslint-plugin-promise": "3.4.0",
+    "eslint-plugin-react": "6.7.1",
+    "eslint-plugin-standard": "2.0.1",
+    "gitbook-tester": "1.4.3",
+    "tape": "4.6.3"
+  }
+}
