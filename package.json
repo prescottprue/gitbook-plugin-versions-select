@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-versions-select",
   "description": "Fork of versions plugin with selected status based on url.",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "lint": "eslint index.js test.js, assets/**",
     "lint:fix": "npm run lint -- --fix",
@@ -36,10 +36,6 @@
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/prescottprue/gitbook-plugin-versions-select/issues"
-  },
-  "dependencies": {
-    "cheerio": "0.22.0",
-    "mkdirp": "0.5.1"
   },
   "devDependencies": {
     "eslint": "3.11.1",
