@@ -21,7 +21,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
 
     $.each(versions, function(i, version) {
       var $option = $('<option>', {
-        'selected': (current === undefined ? version.selected : (version.value.indexOf(window.location.href) !== -1)),
+        'selected': window.location.href.indexOf(version.value) !== -1,
         'value': version.value,
         'text': version.text
       });
