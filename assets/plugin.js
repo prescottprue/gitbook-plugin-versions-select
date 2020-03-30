@@ -7,6 +7,9 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
   function updateVersions(_versions) {
     versions = _versions || versions;
     current = $('.versions-select select').val() || current;
+    var CurAddr = location.href.substr(gitbook.state.root.length);
+    var sharp = CurAddr.indexOf("#");
+    var CurAddrNoAnchor = (sharp == -1)? CurAddr : CurAddr.substr(0, sharp);
 
     // Cleanup existing selector
     $('.versions-select').remove();
@@ -22,7 +25,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
     $.each(versions, function(i, version) {
       var $option = $('<option>', {
         'selected': window.location.href.indexOf(version.value) !== -1,
-        'value': version.value,
+        'value': version.value+CurAddrNoAnchor,
         'text': version.text
       });
 
